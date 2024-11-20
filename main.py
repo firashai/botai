@@ -6,17 +6,18 @@ from telebot import types
 from config import *
 
 main_bot_token = main_token
+segmind_api_key = segmind_api_key
 
-monitoring_bot_token = monitor_token
+#monitoring_bot_token = monitor_token
 
 main_bot = telebot.TeleBot(main_bot_token)
-monitoring_bot = telebot.TeleBot(monitoring_bot_token)
+#monitoring_bot = telebot.TeleBot(monitoring_bot_token)
 
 # Simple logging function
 def log(message):
     log_text = f"[{message.date}] {message.from_user.username}: {message.text}"
     print(log_text)
-    monitoring_bot.send_message(chat_id , log_text)
+#    monitoring_bot.send_message(chat_id , log_text)
 
 @main_bot.message_handler(commands=['start'])
 def start(message):
